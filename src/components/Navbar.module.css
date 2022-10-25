@@ -1,4 +1,19 @@
 .navbar {
     width: 100%;
-    background: red;
+    background: var(--light);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.navbar .title {
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: bold;
 }

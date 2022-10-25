@@ -1,0 +1,41 @@
+.signupForm {
+    max-width: 360px;
+    margin: 60px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px 0 rgba(100,100,100,.1);
+    border-radius: 10px;
+    background: white;
+    text-align: center;
+}
+
+.signupForm label {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    margin: 30px auto;
+    width: 100%;
+}
+
+.signupForm span {
+    padding: 5px;
+    text-align: left;
+}
+
+.signupForm input {
+    border: none;
+    background: var(--gray);
+    padding: 5px 0;
+}
+
+.signupForm input:focus {
+    outline: none;
+    border-bottom: var(--primary) 1px solid
+}
+
+.signupForm input[type="submit"] {
+    width: 30%;
+    border: none;
+    color: var(--dark);
+    background: var(--light);
+    padding: 10px 15px;
+}
