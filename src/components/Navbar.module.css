@@ -6,6 +6,7 @@
 .navbar ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
     max-width: 1280px;

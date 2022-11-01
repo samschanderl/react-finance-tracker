@@ -47,6 +47,10 @@ img {
   background: var(--light);
 }
 
+.btn--light {
+  background: var(--gray)
+}
+
 .btn:hover {
   transform: scale(1.01);
   cursor: pointer;
