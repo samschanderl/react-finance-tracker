@@ -6,12 +6,11 @@
 }
 
 .content {
-    padding-right: 30px;
 }
 
 .sidebar {
-    padding-left: 30px;
-    margin: 25px;
+    padding: 25px;
+    margin: 0px;
 }
 
 .sidebar form {
@@ -58,6 +57,63 @@
 .sidebar button:hover {
     cursor: pointer;
     background: var(--secondary)
+}
+
+/* TRANSACTIONS LIST */
+
+.transactions {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.transactions li {
+    padding: 10px;
+    margin: 0px 10px 20px;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 0 5px 10px 0 rgba(100,100,100,.1);
+    border-left: 4px solid var(--primary);
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.transactions .name {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.transactions .amount {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.transactions button {
+    position: absolute;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    right: 0;
+    transform: translate(30%,-30%);
+    box-shadow: 0 0 5px 0 rgba(100,100,100,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactions button:hover {
+    cursor: pointer;
+    background: var(--gray);
+    color: var(--primary)
 }
 
 @media screen and (max-width: 480px) {

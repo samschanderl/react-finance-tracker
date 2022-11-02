@@ -1,3 +1,4 @@
+import { FOCUSABLE_SELECTOR } from "@testing-library/user-event/dist/utils";
 import { useReducer, useEffect, useState } from "react";
 import { projectFirestore, timestamp } from '../firebase/config';
 
@@ -15,7 +16,9 @@ const firestoreReducer = (state, action) => {
         case 'ADDED_DOCUMENT':
             return {isPending: false, document: action.payload, success: true, error: null};
         case 'ERROR':
-            return {isPending: false, document: null, success: false, error: action.payload}
+            return {isPending: false, document: null, success: false, error: action.payload};
+        case 'DELETED_DOCUMENT':
+            return {document: null, isPending: false, error: null, success: true};
         default:
             return state
     }
@@ -56,7 +59,16 @@ export const useFirestore = (collection) => {
 
     // delete document
     const deleteDocument = async (id) => {
+        dispatch({type: 'IS_PENDING'});
 
+        try {
+            await ref.doc(id).delete();
+            dispatchIfNotCancelled({type: 'DELETED_DOCUMENT'})
+        }
+        catch(err) {
+            console.log(err.message)
+            dispatchIfNotCancelled({type: 'ERROR', payload: err.message})
+        }
     }
 
     // cleanup function
